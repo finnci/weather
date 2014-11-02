@@ -19,6 +19,9 @@ theweather.py takes 5 command line arguments (for now)
 
 6 - amount of time in hours you want this to run .. will actually run for half the time
 
+Run command looks like this:
+python theweather.py "forecast.io key" "hostedgrapite key" "name of your metric" "latitude" "longitude" "timetorun"
+
 To Do:
 ======
 
