@@ -8,7 +8,9 @@ This is made with the intent of generating data for graphing on hostedgraphite.c
 theweather.py takes 3 command line arguments (for now)
 
 1 - This must be your api key for https://developer.forecast.io/
+
 2 - This must be your api key for hostedgraphite.com
+
 3 - This is whatever name you want to name this specific metric
 
 
