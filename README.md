@@ -23,3 +23,4 @@ To Do:
 ======
 
 1. add catch for if intenet connection is lost
+2. add changeable interval time

@@ -23,7 +23,7 @@ while b < timetorun:
 	current = forecast.currently()
 	ctemp = current.temperature
 	sock.sendto(hg_key + "." + metricName + " " + str(ctemp) + "\n", ("carbon.hostedgraphite.com", 2003))
-	print b + "temp is ->" + ctemp
+	print str(b) + "temp is ->" + str(ctemp)
 	b = b + 1
 	time.sleep(60) #pause for 1 minute interval ----make changeable---
 
