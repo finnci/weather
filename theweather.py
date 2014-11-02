@@ -1,8 +1,4 @@
-print('hello!')
 import socket
-import unirest
-import json
-import requests
 import time
 import sys
 import forecastio
@@ -29,6 +25,6 @@ while b < timetorun:
 	sock.sendto(hg_key + "." + metricName + " " + str(ctemp) + "\n", ("carbon.hostedgraphite.com", 2003))
 	print b + "temp is ->" + ctemp
 	b = b + 1
-	time.sleep(60)
+	time.sleep(60) #pause for 1 minute interval ----make changeable---
 
 
