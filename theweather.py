@@ -23,8 +23,8 @@ while timecompare < timetorun:
 	current = forecast.currently()
 	ctemp = current.temperature
 	sock.sendto(hg_key + "." + metricName + " " + str(ctemp) + "\n", ("carbon.hostedgraphite.com", 2003))		#send metric
-	print str(b) + "temp is ->" + str(ctemp)  																	#print data to terminal
+	print str(timecompare) + "temp is ->" + str(ctemp)  																	#print data to terminal
 	timecompare = timecompare + 1   																			#increment counter
-	time.sleep(60) #pause for 1 minute interval ----make changeable---
+	time.sleep(30) #pause for 1 minute interval ----make changeable---
 
 
