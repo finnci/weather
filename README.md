@@ -17,7 +17,7 @@ theweather.py takes 5 command line arguments (for now)
 
 5 - Longitude
 
-6 - amount of time in hours you want this to run
+6 - amount of time in hours you want this to run .. will actually run for half the time
 
 To Do:
 ======
