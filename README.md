@@ -5,7 +5,7 @@ This program monitors the current temperature at a given location over a period 
 
 This is made with the intent of generating data for graphing on hostedgraphite.com and makes use of the weather api and python wrapper found at: https://github.com/ZeevG/python-forecast.io
 
-theweather.py takes 3 command line arguments (for now)
+theweather.py takes 5 command line arguments (for now)
 
 1 - This must be your api key for https://developer.forecast.io/
 
@@ -13,6 +13,11 @@ theweather.py takes 3 command line arguments (for now)
 
 3 - This is whatever name you want to name this specific metric
 
+4 - This is the latitude
+
+5 - Longitude
+
+6 - amount of time in hours you want this to run
 
 To Do:
 ======
