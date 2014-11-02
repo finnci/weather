@@ -8,23 +8,23 @@ api_key = str(sys.argv[1])
 hg_key = str(sys.argv[2])
 metricName = str(sys.argv[3])
 
- #assign latitude, longitude and time to run
+#assign latitude, longitude and time to run
 lat = sys.argv[4]
 lng = sys.argv[5]
 timetorun = sys.argv[6]
 
 #initiate stuff
-b = 0
+timecompare = 0
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
-while b < timetorun:
+while timecompare < timetorun:
 	forecast = forecastio.load_forecast(api_key, lat, lng)
 	current = forecast.currently()
 	ctemp = current.temperature
-	sock.sendto(hg_key + "." + metricName + " " + str(ctemp) + "\n", ("carbon.hostedgraphite.com", 2003))
-	print str(b) + "temp is ->" + str(ctemp)
-	b = b + 1
+	sock.sendto(hg_key + "." + metricName + " " + str(ctemp) + "\n", ("carbon.hostedgraphite.com", 2003))		#send metric
+	print str(b) + "temp is ->" + str(ctemp)  																	#print data to terminal
+	timecompare = timecompare + 1   																			#increment counter
 	time.sleep(60) #pause for 1 minute interval ----make changeable---
 
 
