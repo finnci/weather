@@ -17,14 +17,12 @@ timetorun = sys.argv[6]
 timecompare = 0
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-
 while timecompare < timetorun:
-	forecast = forecastio.load_forecast(api_key, lat, lng)
-	current = forecast.currently()
-	ctemp = current.temperature
-	sock.sendto(hg_key + "." + metricName + " " + str(ctemp) + "\n", ("carbon.hostedgraphite.com", 2003))		#send metric
-	print str(timecompare) + "temp is ->" + str(ctemp)  																	#print data to terminal
-	timecompare = timecompare + 1   																			#increment counter
-	time.sleep(30) #pause for 1 minute interval ----make changeable---
-
-
+    forecast = forecastio.load_forecast(api_key, lat, lng)
+    current = forecast.currently()
+    ctemp = current.temperature
+    sock.sendto(hg_key + "." + metricName + " " + str(ctemp) + "\n",
+                ("carbon.hostedgraphite.com", 2003))
+    print str(timecompare) + "temp is ->" + str(ctemp)
+    timecompare = timecompare + 1
+    time.sleep(30) 
